@@ -7,9 +7,14 @@ public class DeckTester : MonoBehaviour
     [SerializeField]
     List<AbilityCardData> _abilityDeckConfig
         = new List<AbilityCardData>();
+    [SerializeField] AbilityCardView _abilityCardViewFirst = null;
     [SerializeField] AbilityCardView _abilityCardView = null;
+    [SerializeField] AbilityCardView _abilityCardViewLast = null;
     Deck<AbilityCard> _abilityDeck = new Deck<AbilityCard>();
     Deck<AbilityCard> _abilityDiscard = new Deck<AbilityCard>();
+
+    [SerializeField] AbilityCardView _discardView = null;
+    [SerializeField] AbilityCardView _upcomingView = null;
 
     Deck<AbilityCard> _playerHand = new Deck<AbilityCard>();
 
@@ -44,15 +49,25 @@ public class DeckTester : MonoBehaviour
         {
             PlayTopCard();
         }
+
+        
     }
 
     private void Draw()
     {
+        
         AbilityCard newCard = _abilityDeck.Draw(DeckPosition.Top);
         Debug.Log("Drew card: " + newCard.Name);
+
+
+        
         _playerHand.Add(newCard, DeckPosition.Top);
 
+        
         _abilityCardView.Display(newCard);
+
+        AbilityCard upcomingCard = _abilityDeck.Draw(DeckPosition.Top - 3);
+        _upcomingView.Display(upcomingCard);
     }
 
     private void PrintPlayerHand()
@@ -69,8 +84,13 @@ public class DeckTester : MonoBehaviour
         targetCard.Play();
         //consider expanding remove to accept a deck position
         _playerHand.Remove(_playerHand.LastIndex);
+
         _abilityDiscard.Add(targetCard);
         Debug.Log("Card added to discard: " + targetCard.Name);
+        _discardView.Display(targetCard);
+
+
+        
     }
     
 }

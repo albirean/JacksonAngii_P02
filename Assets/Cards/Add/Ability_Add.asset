@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Add
   _cost: 1
   _graphic: {fileID: 0}
-  _playEffect: {fileID: 0}
+  _playEffect: {fileID: 11400000, guid: eca06df610480c54c98aed9f3acf22d3, type: 2}

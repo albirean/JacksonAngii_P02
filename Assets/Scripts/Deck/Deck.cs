@@ -6,6 +6,7 @@ using System;
 public class Deck <T> where T : Card
 {
     List<T> _cards = new List<T>();
+    List<T> _discarded = new List<T>();
 
     public event Action Emptied = delegate { };
     public event Action<T> CardAdded = delegate { };
@@ -13,6 +14,8 @@ public class Deck <T> where T : Card
 
     public int Count => _cards.Count;
     public T TopItem => _cards[_cards.Count - 1];
+    public T SecondItem => _cards[_cards.Count - 2];
+    public T ThirdItem => _cards[_cards.Count - 3];
     public T BottomItem => _cards[0];
     public bool IsEmpty => _cards.Count == 0;
     public int LastIndex
@@ -26,6 +29,36 @@ public class Deck <T> where T : Card
             else
             {
                 return _cards.Count - 1;
+            }
+        }
+    }
+
+    public int SecondIndex
+    {
+        get
+        {
+            if (_cards.Count == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return _cards.Count - 2;
+            }
+        }
+    }
+
+    public int ThirdIndex
+    {
+        get
+        {
+            if (_cards.Count == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return _cards.Count - 3;
             }
         }
     }

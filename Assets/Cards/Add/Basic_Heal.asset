@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f61506647e35534eb806bcec8525c85, type: 3}
-  m_Name: Ability_Steal
+  m_Script: {fileID: 11500000, guid: aadf21e61c202bf43947248ec713d36f, type: 3}
+  m_Name: Basic_Heal
   m_EditorClassIdentifier: 
-  _name: Steal
-  _cost: 1
-  _graphic: {fileID: 0}
-  _playEffect: {fileID: 11400000, guid: 635e26d730a0e0940913acc1dd5b7cfc, type: 2}
+  _healAmount: 3
