@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class InputController : MonoBehaviour
@@ -10,12 +11,16 @@ public class InputController : MonoBehaviour
     public event Action PressedLeft = delegate { };
     public event Action PressedRight = delegate { };
 
+    [SerializeField] Button _confirmButton = null;
+
+    private void Awake()
+    {
+        _confirmButton.onClick.AddListener(() => DetectConfirm());
+    }
+
     void Update()
     {
-        DetectConfirm();
-        DetectCancel();
-        DetectLeft();
-        DetectRight();
+
     }
 
     private void DetectRight()
@@ -44,9 +49,6 @@ public class InputController : MonoBehaviour
 
     private void DetectConfirm()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
             PressedConfirm?.Invoke();
-        }
     }
 }

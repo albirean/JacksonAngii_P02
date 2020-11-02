@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewHealPlayEffect", menuName = "CardData/PlayEffects/Heal")]
-public class HealPlayEffect : CardEffect
+[CreateAssetMenu(fileName = "NewDividePlayEffect", menuName = "CardData/PlayEffects/Divide")]
+
+public class DividePlayEffect : CardEffect
 {
-    [SerializeField] int _healAmount = 1;
+    [SerializeField] int _damageAmount = 1;
 
     public override void Activate(ITargetable target)
     {
@@ -14,8 +15,8 @@ public class HealPlayEffect : CardEffect
         //if it is, apply damage
         if (objectToDamage != null)
         {
-            objectToDamage.GainPoints(_healAmount);
-            Debug.Log("Add Health to the target.");
+            objectToDamage.DividePoints(_damageAmount);
+            Debug.Log("Add damage to the target.");
         }
         else
         {

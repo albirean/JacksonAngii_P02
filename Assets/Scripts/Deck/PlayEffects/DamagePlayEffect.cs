@@ -15,7 +15,7 @@ public class DamagePlayEffect : CardEffect
         //if it is, apply damage
         if(objectToDamage != null)
         {
-            objectToDamage.TakeDamage(_damageAmount);
+            objectToDamage.LosePoints(_damageAmount);
             Debug.Log("Add damage to the target.");
         }
         else

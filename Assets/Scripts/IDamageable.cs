@@ -4,8 +4,11 @@ using UnityEngine;
 
 public interface IDamageable
 {
-    void TakeDamage(int damage);
+    void LosePoints(int damage);
 
-    void HealDamage(int health);
-    void Kill();
+    void GainPoints(int health);
+
+    void MultiplyPoints(int multiply);
+
+    void DividePoints(int divide);
 }

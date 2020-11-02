@@ -4,36 +4,43 @@ using UnityEngine;
 
 public class Creature : MonoBehaviour, ITargetable, IDamageable
 {
-    int _currentHealth = 10;
-    int _maxHealth = 25;
+    public int _currentPoints = 0;
+    public int _maxPoints = 30;
 
-    public void Kill()
+
+    public void LosePoints(int damage)
     {
-        Debug.Log("Kill the creature!");
-        gameObject.SetActive(false);
+        _currentPoints -= damage;
+        Debug.Log("Took damage. Remaining health: " + _currentPoints);
     }
 
-    public void TakeDamage(int damage)
+    public void GainPoints(int health)
     {
-        _currentHealth -= damage;
-        Debug.Log("Took damage. Remaining health: " + _currentHealth);
-        if(_currentHealth <= 0)
+        _currentPoints += health;
+        Debug.Log("Healed. Remaining Health: " + _currentPoints);
+        if(_currentPoints >= _maxPoints)
         {
-            Kill();
+            _currentPoints = _maxPoints;
         }
     }
 
-    public void HealDamage(int health)
+    public void DividePoints(int divide)
     {
-        _currentHealth += health;
-        Debug.Log("Healed. Remaining Health: " + _currentHealth);
-        if(_currentHealth >= _maxHealth)
+        _currentPoints *= (1 / divide);
+        Debug.Log("Divided. Remaining Health: " + _currentPoints);
+    }
+
+    public void MultiplyPoints(int multiply)
+    {
+        _currentPoints *= multiply;
+        Debug.Log("Multiplied. Remaining Health: " + _currentPoints);
+        if(_currentPoints >= _maxPoints)
         {
-            _currentHealth = _maxHealth;
+            _currentPoints = _maxPoints;
         }
     }
     public void Target()
     {
-        Debug.Log("Creature has been targeted.");
+        Debug.Log(gameObject.name + " has been targeted.");
     }
 }

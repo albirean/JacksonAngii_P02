@@ -16,8 +16,8 @@ public class StealPlayEffect : CardEffect
         //if it is, apply damage
         if (objectToDamage != null)
         {
-            objectToDamage.TakeDamage(_damageAmount);
-            objectToDamage.HealDamage(_healAmount);
+            objectToDamage.LosePoints(_damageAmount);
+            objectToDamage.GainPoints(_healAmount);
             Debug.Log("Add damage to the target.");
         }
         else
