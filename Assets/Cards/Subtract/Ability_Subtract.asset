@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f61506647e35534eb806bcec8525c85, type: 3}
   m_Name: Ability_Subtract
   m_EditorClassIdentifier: 
-  _name: Subtract
+  _name: Damage I
+  _desc: Lose 2 points.
   _cost: 1
-  _graphic: {fileID: 0}
+  _graphic: {fileID: 21300000, guid: 5dc6de38c9f4c054c9ec427173022433, type: 3}
   _playEffect: {fileID: 11400000, guid: 4940b978098e4f245883315a3ba5c626, type: 2}

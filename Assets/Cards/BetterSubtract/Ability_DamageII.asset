@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Ability_DamageII
   m_EditorClassIdentifier: 
   _name: Damage II
+  _desc: Lose 5 points.
   _cost: 1
-  _graphic: {fileID: 0}
+  _graphic: {fileID: 21300000, guid: 58f4396f2e9e9454baa2f9668cc01a3a, type: 3}
   _playEffect: {fileID: 11400000, guid: 1557b40b414e54b438981b10a81be0e3, type: 2}

@@ -482,4 +482,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nameTextUI: {fileID: 889578763183562835}
   _costTextUI: {fileID: 889578765004116741}
+  _descriptionTextUI: {fileID: 889578764135628333}
   _graphicUI: {fileID: 889578764716131884}

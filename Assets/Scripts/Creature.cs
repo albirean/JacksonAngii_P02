@@ -12,6 +12,11 @@ public class Creature : MonoBehaviour, ITargetable, IDamageable
     {
         _currentPoints -= damage;
         Debug.Log("Took damage. Remaining health: " + _currentPoints);
+
+        if(_currentPoints <= 0)
+        {
+            _currentPoints = 0;
+        }
     }
 
     public void GainPoints(int health)

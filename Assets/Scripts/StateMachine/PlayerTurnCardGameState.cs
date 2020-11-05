@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlayerTurnCardGameState : CardGameState
 {
     [SerializeField] Text _playerTurnTextUI = null;
+    [SerializeField] Creature _player = null;
+    [SerializeField] Creature _enemy = null;
 
     int _playerTurnCount = 0;
 
@@ -18,6 +20,21 @@ public class PlayerTurnCardGameState : CardGameState
         _playerTurnTextUI.text = "Player Turn: " + _playerTurnCount.ToString();
 
         StateMachine.Input.PressedConfirm += OnPressedConfirm;
+    }
+
+    public override void Tick()
+    {
+        if(_player._currentPoints == 30)
+        {
+            Debug.Log("Entering Win State...");
+            StateMachine.ChangeState<WinCardGameState>();
+        }
+
+        if(_enemy._currentPoints == 30)
+        {
+            Debug.Log("Entering Lose State...");
+            StateMachine.ChangeState<LoseCardGameState>();
+        }
     }
 
     public override void Exit()

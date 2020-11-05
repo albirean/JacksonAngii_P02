@@ -9,6 +9,9 @@ public class AbilityCardData : ScriptableObject
     [SerializeField] string _name = "...";
     public string Name => _name;
 
+    [SerializeField] string _desc = "...";
+    public string Desc => _desc;
+
     [SerializeField] int _cost = 1;
     public int Cost => _cost;
 

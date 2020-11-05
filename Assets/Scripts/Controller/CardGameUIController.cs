@@ -13,6 +13,7 @@ public class CardGameUIController : MonoBehaviour
 
     [SerializeField] Creature _player = null;
     [SerializeField] Creature _enemy = null;
+
     private void OnEnable()
     {
         EnemyTurnCardGameState.EnemyTurnBegan += OnEnemyTurnBegan;

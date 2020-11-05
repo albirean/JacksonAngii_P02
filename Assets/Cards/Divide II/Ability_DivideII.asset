@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f61506647e35534eb806bcec8525c85, type: 3}
-  m_Name: Ability_HealII
+  m_Name: Ability_DivideII
   m_EditorClassIdentifier: 
-  _name: Heal II
-  _desc: Add 5 points.
-  _cost: 2
-  _graphic: {fileID: 21300000, guid: 7117eed60cd6f8d40badec058d3579ac, type: 3}
-  _playEffect: {fileID: 11400000, guid: 3d32484570cc2f446a5bf8691594c083, type: 2}
+  _name: Divide II
+  _desc: Points divide by 2.
+  _cost: 1
+  _graphic: {fileID: 21300000, guid: c1d8aa322b80989498690ad5c6d1a474, type: 3}
+  _playEffect: {fileID: 11400000, guid: a02a210ecd4c841418b5848a7bb7640d, type: 2}

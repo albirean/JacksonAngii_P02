@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Ability_Steal
   m_EditorClassIdentifier: 
   _name: Steal
+  _desc: Take 2 points. Add 2 points.
   _cost: 1
-  _graphic: {fileID: 0}
+  _graphic: {fileID: 21300000, guid: d53edf92b0276e94cbaeac84dbea5623, type: 3}
   _playEffect: {fileID: 11400000, guid: 635e26d730a0e0940913acc1dd5b7cfc, type: 2}
